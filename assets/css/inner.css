@@ -1,0 +1,228 @@
+/* ---------- Title pill ---------- */
+
+.page-title {
+    position: absolute;
+    top: calc(5.5% - 0.1937vw);
+    height: auto;
+    margin: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0 4.1667vw;
+    border-image: url("../images/titlebox.png") 0 80 fill / 0 4.1667vw 0 / 0 stretch;
+    font-weight: 400;
+    text-align: center;
+    color: var(--title-red);
+}
+
+.page-title-wide {
+    left: 25%;
+    width: 50%;
+}
+
+.page-title-narrow {
+    left: 29.1823%;
+    width: 41.7708%;
+}
+
+.page-title-text {
+    display: block;
+    position: relative;
+    top: -0.7vw;
+    font-size: 2.3vw;
+    line-height: 8.3333vw;
+    white-space: nowrap;
+}
+
+/* ---------- Home button ---------- */
+
+.home-btn {
+    position: absolute;
+    top: calc(5.5% + 0.8vw);
+    left: 6.5104%;
+    width: 3.5417%;
+    height: auto;
+    line-height: 0;
+    display: block;
+}
+
+.home-btn-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.home-btn-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity var(--hover-time) ease;
+}
+
+.home-btn:hover .home-btn-image-hover {
+    opacity: 1;
+}
+
+/* ---------- Shortcut keys ---------- */
+
+.shortcut-key {
+    position: absolute;
+    left: 4.4792%;
+    width: 4.2708%;
+    height: auto;
+    padding-top: 4.6875%;
+    display: block;
+    text-decoration: none;
+}
+
+.shortcut-key-1 {
+    top: 25.9852%;
+}
+
+.shortcut-key-2 {
+    top: 35.3372%;
+}
+
+.shortcut-key-3 {
+    top: 44.6891%;
+}
+
+.shortcut-key-4 {
+    top: 54.0411%;
+}
+
+.shortcut-key-5 {
+    top: 63.3930%;
+}
+
+.shortcut-key-ring {
+    position: absolute;
+    top: 6.67%;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba(248, 255, 195, 0.62);
+}
+
+.shortcut-key-dot {
+    position: absolute;
+    top: 20%;
+    left: 14.63%;
+    width: 76.83%;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    border: 0.13vw solid #e15757;
+    border-radius: 50%;
+    background-color: #ffacac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color var(--hover-time) ease, border-color var(--hover-time) ease;
+}
+
+.shortcut-key-number {
+    font-family: var(--font-bakbak);
+    font-size: 2.6041vw;
+    line-height: 2.6041vw;
+    color: #7f2929;
+    transition: color var(--hover-time) ease;
+}
+
+.shortcut-key-tray {
+    position: absolute;
+    top: 19.44%;
+    bottom: 13.89%;
+    left: 12.2%;
+    width: 73.17%;
+    border-radius: 50vw;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: width var(--hover-time) ease, top var(--hover-time) ease, bottom var(--hover-time) ease;
+}
+
+.shortcut-key-label {
+    width: 11vw;
+    flex-shrink: 0;
+    margin-left: 3.5938vw;
+    font-family: var(--font-bakbak);
+    font-size: 1vw;
+    line-height: 1.15vw;
+    text-align: center;
+    color: #716969;
+    opacity: 0;
+    transition: opacity var(--hover-time) ease;
+}
+
+.shortcut-key-label .english,
+.shortcut-key-label .is-fallback {
+    font-family: var(--font-bakbak);
+}
+
+.shortcut-key-label .hindi,
+.shortcut-key-label .gujrati {
+    line-height: 1.5vw;
+}
+
+.shortcut-key-label .is-fallback {
+    line-height: 1.15vw;
+}
+
+.shortcut-key:hover .shortcut-key-tray {
+    top: 6.1%;
+    bottom: -3.9%;
+    width: 352%;
+}
+
+.shortcut-key:hover .shortcut-key-label {
+    opacity: 1;
+}
+
+.shortcut-key:hover .shortcut-key-dot {
+    background-color: #fb3a04;
+    border-color: #fff;
+}
+
+.shortcut-key:hover .shortcut-key-number {
+    color: #fffbf2;
+}
+
+/* ---------- Back button (slider pages, goes to the types page) ---------- */
+
+.page-back-btn {
+    position: absolute;
+    top: calc(5.5% + 0.9284vw);
+    left: 6.4214%;
+    width: 2.5559vw;
+    height: auto;
+    line-height: 0;
+    display: block;
+    border-radius: 50%;
+    filter: drop-shadow(0 0.2083vw 0.1042vw rgba(0, 0, 0, 0.25));
+}
+
+.page-back-btn-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.page-back-btn-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity var(--hover-time) ease;
+}
+
+.page-back-btn:hover .page-back-btn-image-hover {
+    opacity: 1;
+}

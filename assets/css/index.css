@@ -1,0 +1,358 @@
+/* ---------- Topic bubbles ---------- */
+
+.topic-bubble {
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    pointer-events: none;
+    top: 31.2739%;
+    left: 40.9788%;
+    width: 18.1136%;
+    height: auto;
+    line-height: 0;
+    cursor: pointer;
+    transition: top var(--open-time) var(--open-ease), left var(--open-time) var(--open-ease);
+}
+
+.topic-bubble-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: scale var(--hover-time) ease;
+}
+
+.topic-bubble-text {
+    position: absolute;
+    top: 51.445%;
+    left: 22.58%;
+    width: 55.01%;
+    translate: 0 -50%;
+    font-size: 1.9vw;
+    line-height: 1.26vw;
+    text-align: center;
+    white-space: normal;
+    text-wrap: balance;
+    color: var(--title-red);
+    text-shadow: 0 0 0.125vw rgba(0, 0, 0, 0.25);
+    transition: scale var(--hover-time) ease;
+}
+
+.topic-bubble-text .hindi,
+.topic-bubble-text .gujrati {
+    line-height: 2.2vw;
+}
+
+.topic-bubble-text .is-fallback {
+    line-height: 1.26vw;
+}
+
+.stage.is-open .topic-bubble {
+    pointer-events: auto;
+}
+
+.stage.is-open .topic-bubble:hover .topic-bubble-image {
+    scale: 0.94;
+}
+
+.stage.is-open .topic-bubble:hover .topic-bubble-text {
+    scale: 0.94;
+}
+
+/* Exit: the bubbles go back behind the main flower, then the page changes */
+
+.stage.is-open.is-leaving .topic-bubble {
+    top: 31.2739%;
+    left: 40.9788%;
+    transition-duration: var(--leave-time);
+}
+
+.stage.is-open.is-leaving .topic-bubble-intro,
+.stage.is-open.is-leaving .topic-bubble-when,
+.stage.is-open.is-leaving .topic-bubble-whom,
+.stage.is-open.is-leaving .topic-bubble-not {
+    top: 31.2739%;
+    left: 40.9788%;
+}
+
+.stage.is-open .topic-bubble-intro {
+    top: 9.7775%;
+    left: 8.9475%;
+}
+
+.stage.is-open .topic-bubble-when {
+    top: 52.7702%;
+    left: 8.9475%;
+}
+
+.stage.is-open .topic-bubble-whom {
+    top: 52.7702%;
+    left: 72.9058%;
+}
+
+.stage.is-open .topic-bubble-not {
+    top: 9.7775%;
+    left: 72.9058%;
+}
+
+/* ---------- Centre flower ---------- */
+
+.center-flower {
+    position: absolute;
+    top: 14.7283%;
+    left: 31.8089%;
+    width: 36.4345%;
+    height: auto;
+    line-height: 0;
+    transition: top var(--open-time) var(--open-ease), left var(--open-time) var(--open-ease), width var(--open-time) var(--open-ease), transform var(--open-time) var(--open-ease);
+}
+
+.center-flower-outer {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: scale 0.4s ease;
+}
+
+.center-flower-inner {
+    position: absolute;
+    top: 14.026%;
+    left: 13.4868%;
+    width: 73.0644%;
+    height: auto;
+    display: block;
+    transition: top var(--open-time) var(--open-ease), left var(--open-time) var(--open-ease), width var(--open-time) var(--open-ease), scale 0.4s ease;
+}
+
+.stage.is-open .center-flower {
+    transform: rotate(90deg);
+    top: 19.0444%;
+    left: 33.9411%;
+    width: 32.1555%;
+}
+
+/* Exit: the main flower turns back 90deg anticlockwise at the entrance speed while the bubbles go behind it */
+
+.stage.is-open.is-leaving .center-flower {
+    transform: rotate(0deg);
+    transition-duration: var(--open-time);
+}
+
+.stage.is-open .center-flower-inner {
+    top: 12.2636%;
+    left: 11.0348%;
+    width: 77.9305%;
+}
+
+.stage.is-open.is-flower-hover .center-flower-outer {
+    scale: 0.94;
+}
+
+.stage.is-open.is-flower-hover .center-flower-inner {
+    scale: 0.98;
+}
+
+.center-title {
+    position: absolute;
+    top: 51.6027%;
+    left: 42.2917%;
+    width: 15.4295%;
+    transform: translateY(-50%);
+    font-size: 4.38vw;
+    line-height: 2.9034vw;
+    font-weight: 400;
+    text-align: center;
+    color: var(--title-red);
+    text-shadow: 0 0.2083vw 0.125vw rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.center-title .hindi,
+.center-title .gujrati {
+    line-height: 5.625vw;
+}
+
+/* ---------- Types of badge ---------- */
+
+.types-of {
+    position: absolute;
+    top: calc(5.5% + 0.4615vw);
+    left: 40.1563%;
+    width: 19.6354%;
+    height: auto;
+    background-color: var(--badge-fill);
+    border: 0.3125vw solid var(--frame-red);
+    border-radius: 0.8854vw;
+}
+
+.types-of-text {
+    position: relative;
+    top: -0.5vw;
+    font-size: 3.5vw;
+    line-height: 2.8646vw;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--badge-text);
+}
+
+/* Hindi / Gujarati: smaller text in a block that is exactly as tall as the English pill, centred by position */
+.types-of-text .hindi,
+.types-of-text .gujrati {
+    display: block;
+    position: relative;
+    top: 0.5vw;
+    font-size: 3vw;
+    line-height: 3.0729vw;
+}
+
+.types-of-text .gujrati {
+    top: 0.6563vw;
+}
+
+/* ---------- Characters ---------- */
+
+.figure-boy {
+    position: absolute;
+    top: 35.6309%;
+    left: 27.1210%;
+    width: 7.3689%;
+    height: auto;
+    display: block;
+}
+
+.figure-girl {
+    position: absolute;
+    top: 41.3593%;
+    left: 64.3398%;
+    width: 8.5599%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- Buttons ---------- */
+
+.enter-btn {
+    position: absolute;
+    top: 85.8567%;
+    left: 45.1172%;
+    width: 9.7885%;
+    height: auto;
+    padding: 0;
+    border: 0.1563vw solid var(--enter-border);
+    border-radius: 5.2519vw;
+    background: linear-gradient(to bottom, var(--enter-top), var(--enter-bottom));
+    box-shadow: 0 0.5729vw 0.8021vw -0.0521vw rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    overflow: hidden;
+    transition: top var(--open-time) var(--open-ease), border-color var(--hover-time) ease;
+}
+
+.enter-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--enter-hover-top), var(--enter-hover-bottom));
+    opacity: 0;
+    transition: opacity var(--hover-time) ease;
+}
+
+.enter-btn:hover {
+    border-color: #fff;
+}
+
+.enter-btn:hover::before {
+    opacity: 1;
+}
+
+.enter-btn-text {
+    position: relative;
+    display: block;
+    font-family: "Baloo", sans-serif;
+    font-size: 1.875vw;
+    line-height: 2.802vw;
+    text-align: center;
+    color: #fff;
+    transition: color var(--hover-time) ease;
+}
+
+.enter-btn:hover .enter-btn-text {
+    color: var(--enter-hover-text);
+}
+
+.enter-btn-text .hindi,
+.enter-btn-text .gujrati {
+    display: block;
+}
+
+/* the taller Hindi / Gujarati button keeps the same bottom edge as the English one */
+body:has(#hi:checked) .enter-btn,
+body:has(#gu:checked) .enter-btn {
+    translate: 0 -0.7813vw;
+}
+
+.enter-btn-text .hindi {
+    padding: 0.5833vw 0 0.2188vw;
+}
+
+.enter-btn-text .gujrati {
+    padding: 0.7656vw 0 0.0365vw;
+}
+
+.enter-btn-text .english,
+.enter-btn-text .is-fallback {
+    font-family: "Baloo", sans-serif;
+}
+
+.stage.is-open .enter-btn {
+    top: 114.9631%;
+}
+
+.back-btn {
+    position: absolute;
+    top: calc(5.5% + 1.224vw);
+    left: 6.4214%;
+    width: 2.5559vw;
+    height: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    line-height: 0;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 0.2083vw 0.1042vw rgba(0, 0, 0, 0.25));
+    transition: opacity var(--open-time) var(--open-ease);
+}
+
+.back-btn-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.back-btn-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity var(--hover-time) ease;
+}
+
+.back-btn:hover .back-btn-image-hover {
+    opacity: 1;
+}
+
+.main-container:has(.stage.is-open) .back-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.stage.is-open .center-flower {
+    cursor: pointer;
+}

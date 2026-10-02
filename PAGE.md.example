@@ -1,0 +1,86 @@
+# [page].html — Build Instructions
+
+Source: [project name] — file key `[fileKey]`
+Base frame size: **1920 x 1080** (px -> vw divides by 1920)
+Base template: `basic-template.html` — content goes in `.main-container > .stage`
+
+**STATUS: [blocked on assets / ready / built]**
+
+---
+
+## Navigation
+
+← from: [previous page]
+→ to: [next page]
+
+[If several frames are states of one page, say so here and name the toggle class.]
+
+---
+
+## 0. Assets
+
+### 0.1 — Images
+
+| File | Layer / use | Natural px |
+|---|---|---|
+|  |  |  |
+
+Missing: [list, or "none"]
+
+### 0.2 — Fonts
+
+| Family | Used for | File in /fonts/ |
+|---|---|---|
+|  |  |  |
+
+---
+
+## 1. Palette
+
+```
+--name:  #000000    what it is used for
+```
+
+---
+
+## 2. Structure
+
+```
+.main-container
+└── .stage
+    ├── img.stage-spacer   transparent, sized to the CONTENT extent
+    └── ...                everything else absolute, positioned in %
+
+Content extent: y [top] .. [bottom] of the frame -> spacer [W]x[H]
+All vertical % below are measured from y=[top], not the frame's 0.
+```
+
+---
+
+## 3. Frame [node-id] Guidelines — [state name]
+
+  3- read frame [node-id] from figma mcp local server [figma link]
+     for image reference use @assets/images/
+
+    3.1- [layer name] — instruction
+      3.1.1- width `X%` (Npx), height auto, image `name.png`
+      3.1.2- position left `X%` (Npx), top `Y%` (Npx)
+      3.1.3- font [family] `X.XXvw` (Npx), color `#hex`
+
+    3.2- on click of [layer] → [what happens]
+
+    3.3- slider instructions (if any)
+      3.3.1- first slide → layer [X]
+      3.3.2- [next] → next slide, [prev] → previous slide
+
+---
+
+## 4. Frame [node-id] Guidelines — [next state]
+
+    ...same numbered format...
+
+---
+
+## 5. Open questions
+
+1. [anything Figma could not answer]

@@ -1,0 +1,152 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    font-family: Poppins;
+    min-height: 100%;
+    overflow: hidden auto;
+}
+
+/* Page wrapper — the Kaussagg shell.
+   min-height (never height) means the box is at least the screen and grows
+   past it only when the content demands, so the page scrolls ONLY on overflow.
+   This is the one place vh is allowed in the project. */
+
+.main-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+/* top right fixed language bar */
+#language {
+    background-color: #4e9ebf;
+    border-radius: 4vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 0.1vw 0.3vw;
+}
+
+#language label {
+    cursor: pointer;
+}
+
+#langSelect {
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    z-index: 999999;
+}
+
+#langSelect label {
+    display: block;
+    padding: 0.3vw 0.3vw;
+    position: relative;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#langSelect label input {
+    display: none;
+}
+
+#langSelect label span {
+    border: 0.1vw solid white;
+    overflow: hidden;
+    font-size: 1vw;
+    padding: 0.5vw 0.8vw;
+    border-radius: 50%;
+    font-family: "Hindi";
+    color: white;
+}
+
+#langSelect input:checked+span {
+    background: #fff;
+    color: black;
+    border-color: black;
+}
+
+/* ---------- Page background ----------
+   Direct child of <body>, OUTSIDE .main-container, exactly like Kaussagg's
+   bg2.png. With the background-color on <body> these are the only two things
+   outside the wrapper, so no white bars can ever appear — at any window size,
+   and across the whole scrollable height when the page does overflow. */
+
+.page-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ---------- Stage ----------
+   stage-spacer.png is a transparent PNG that gives .stage its height. Every
+   other child is position:absolute and adds no height, so WITHOUT THE SPACER
+   the stage collapses to 0 and overflow:hidden clips the whole page. Do not
+   remove it, and do not swap it for aspect-ratio.
+
+   SIZE IT TO THE CONTENT EXTENT, NOT THE FRAME.
+   A Figma frame usually has dead space above the topmost element and below the
+   bottom one. Including it makes the page taller than the artwork and forces a
+   scrollbar on every desktop browser (a maximised 1920x1080 screen gives only
+   ~937px of viewport). Measure the topmost and bottommost visible elements:
+
+       spacer height = bottom_of_lowest - top_of_highest
+
+   and measure every vertical % from that top edge, not from the frame's 0.
+   Example: a 1920x1080 frame whose art spans y 59..964 gets a 1920x905 spacer.
+
+   Regenerate with:  python make-spacer.py 1920 905
+
+   This is why Kaussagg fits the screen — its height comes from the artwork
+   that is actually there. */
+
+.stage {
+    width: 100%;
+    position: relative;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.stage-spacer {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Elements placed freely inside the stage */
+
+.stage-item {
+    position: absolute;
+    height: auto;
+    line-height: 0;
+}
+
+.stage-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Guru Vandan - Pranam</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/inner.css">
+    <link rel="stylesheet" href="./assets/css/pranam.css">
+</head>
+
+<body id="body">
+
+    <div id="langSelect">
+        <div id="language">
+            <label><input type="radio" onclick="val('English')" name="lang" id="en" value="English">
+                <span>E</span>
+            </label>
+            <label><input type="radio" onclick="val('Hindi')" name="lang" id="hi" value="Hindi">
+                <span>H</span>
+            </label>
+            <label><input type="radio" onclick="val('Gujrati')" name="lang" id="gu" value="Gujrati">
+                <span>G</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="inner-bg inner-bg-full">
+            <img class="inner-bg-image" src="./assets/images/innerbg.png" alt="">
+            <video class="inner-bg-video" autoplay muted loop playsinline preload="auto">
+                <source src="./assets/videos/ripple.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="stage">
+            <img class="stage-spacer" src="./assets/images/stage-spacer.png" alt="">
+
+            <div class="pranam-container">
+                <div class="pranam-img">
+                    <div class="pranam-video">
+                        <video src="./assets/videos/pranam.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <span class="pranam-title">
+                        <span class="english">Pranam</span>
+                        <span class="hindi">प्रणाम</span>
+                        <span class="gujrati">પ્રણામ</span>
+                    </span>
+                    <img src="./assets/images/pranam-img.png" alt="">
+                </div>
+                <a href="./index.html" class="home-btn-1">
+                    <span class="home-btn-1-label">
+                        <span class="english">Home</span>
+                        <span class="hindi">होम</span>
+                        <span class="gujrati">ઘર</span>
+                    </span>
+                    <img src="./assets/images/home-btn-1.png" alt="">
+                </a>
+            </div>
+        </div>
+        <a class="page-back-btn" href="./bows.html" aria-label="Back">
+            <img class="page-back-btn-image" src="./assets/images/back.png" alt="Back">
+            <img class="page-back-btn-image-hover" src="./assets/images/backhover.png" alt="">
+        </a>
+    </div>
+
+    <script src="./assets/js/jquery-3.7.1.js"></script>
+    <script src="./assets/js/custom.js"></script>
+    <script src="./assets/js/pranam.js"></script>
+</body>
+
+</html>

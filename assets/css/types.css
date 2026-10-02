@@ -1,0 +1,101 @@
+/* ---------- Type flowers ---------- */
+
+:root {
+    --leave-time: 1.2s;
+    --fade-time: 0.3s;
+}
+
+.type-bubble {
+    position: absolute;
+    top: 31.4015%;
+    left: 40.9896%;
+    width: 17.9876%;
+    height: auto;
+    line-height: 0;
+    transition: top var(--open-time) var(--open-ease), left var(--open-time) var(--open-ease), width var(--open-time) var(--open-ease);
+}
+
+.type-bubble {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.stage.is-open .type-bubble {
+    pointer-events: auto;
+}
+
+.type-bubble-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.type-bubble-text {
+    position: absolute;
+    top: 48.4%;
+    left: 22.58%;
+    width: 55.01%;
+    transform: translateY(-50%);
+    font-size: 2vw;
+    line-height: 1.94vw;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--title-red);
+    text-shadow: 0 0 0.125vw rgba(0, 0, 0, 0.25);
+    transition: font-size var(--open-time) var(--open-ease), line-height var(--open-time) var(--open-ease);
+}
+
+.stage.is-open .type-bubble-one {
+    top: 35.4214%;
+    left: 12.3013%;
+    width: 19.427%;
+}
+
+.stage.is-open .type-bubble-three {
+    top: 35.4214%;
+    left: 68.343%;
+    width: 19.427%;
+}
+
+.stage.is-open .type-bubble-two {
+    top: 24.9737%;
+    left: 35.1563%;
+    width: 29.7396%;
+}
+
+.stage.is-open .type-bubble-two .type-bubble-text {
+    font-size: 2.9vw;
+    line-height: 2.8133vw;
+}
+
+/* ---------- Continuous spin (flower art only, text stays upright) ---------- */
+
+@keyframes typeFlowerSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.stage.is-spinning .type-bubble-image {
+    animation: typeFlowerSpin 11s linear infinite;
+}
+
+/* ---------- Exit: stacking back together is quicker than the spread ---------- */
+
+.stage.is-leaving .type-bubble,
+.stage.is-leaving .type-bubble-text {
+    transition-duration: var(--leave-time);
+}
+
+/* ---------- Exit: once stacked, the remaining flower fades out quickly ---------- */
+
+.stage.is-faded .type-bubble {
+    opacity: 0;
+    transition: opacity var(--fade-time) ease;
+}

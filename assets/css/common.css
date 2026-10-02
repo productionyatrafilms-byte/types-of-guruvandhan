@@ -1,0 +1,172 @@
+@font-face {
+    font-family: "Katibeh";
+    src: url("../../fonts/Katibeh-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Baloo";
+    src: url("../../fonts/Baloo Regular 400.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Bakbak One";
+    src: url("../../fonts/BakbakOne-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Hindi";
+    src: url("../../fonts/ITFDevanagari.ttc");
+}
+
+@font-face {
+    font-family: "Gujrati";
+    src: url("../../fonts/NotoSansGujarati-Regular.ttf") format("truetype");
+}
+
+:root {
+    --page-bg-color: #ffeed9;
+    --frame-red: #e04014;
+    --badge-fill: #ffeab6;
+    --title-red: #b60000;
+    --badge-text: #ad0000;
+    --enter-top: #ffd0a9;
+    --enter-bottom: #fb3a04;
+    --enter-border: #fff2e2;
+    --enter-hover-top: #fff5ec;
+    --enter-hover-bottom: #ffc592;
+    --enter-hover-text: #4f4f4f;
+    --hover-time: 0.4s;
+    --leave-time: 1.2s;
+    --font-bakbak: "Bakbak One", "Baloo", sans-serif;
+    --open-ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --open-time: 2s;
+}
+
+body {
+    background-color: var(--page-bg-color);
+}
+
+.hindi {
+    font-family: "Hindi", sans-serif;
+}
+
+.gujrati {
+    font-family: "Gujrati", sans-serif;
+}
+
+.english {
+    font-family: "Katibeh", serif;
+}
+
+.hindi.is-fallback,
+.gujrati.is-fallback {
+    font-family: "Katibeh", serif;
+}
+
+/* ---------- Frame artwork ---------- */
+
+.frame-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.inner-bg {
+    position: absolute;
+    top: 5.5%;
+    bottom: 6.5%;
+    left: 4.2188%;
+    width: 91.6146%;
+    line-height: 0;
+    overflow: hidden;
+    border-radius: 3.3854vw;
+}
+
+.inner-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0.3646vw solid var(--frame-red);
+    border-radius: 3.3854vw;
+}
+
+.inner-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.inner-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.4;
+}
+
+/* ---------- Language toggle (Figma LAG, 153 x 54) ---------- */
+
+#langSelect {
+    top: calc(5.5% + 0.8vw);
+    right: 6.4583vw;
+    filter: drop-shadow(0 0.2083vw 0.1042vw rgba(0, 0, 0, 0.25));
+}
+
+#language {
+    width: 7.9688vw;
+    padding: 0.2604vw 0.3125vw;
+    gap: 0.4688vw;
+    justify-content: flex-start;
+    background-color: transparent;
+    border: 0.1042vw solid var(--frame-red);
+    border-radius: 12.6042vw;
+}
+
+#langSelect label {
+    padding: 0;
+}
+
+#langSelect label span {
+    width: 2.0833vw;
+    padding: 0;
+    border: 0.1042vw solid var(--frame-red);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Baloo", sans-serif;
+    font-size: 1.875vw;
+    line-height: 2.0833vw;
+    color: var(--frame-red);
+}
+
+#langSelect input:checked+span {
+    background: var(--frame-red);
+    border-color: var(--frame-red);
+    color: #fff;
+}
+
+
+/* Stage is trimmed to the artwork (y 69..1018 of the frame) and centred, so the
+   page only scrolls by a few px; the border art stretches behind it. */
+
+.main-container {
+    align-content: center;
+}

@@ -252,3 +252,10 @@
 .page-title-text .is-fallback {
     font-family: "Baloo", sans-serif;
 }
+
+.page-title-text .english,
+.page-title-text .is-fallback {
+    position: relative;
+    top: 0.7vw;
+    font-size: 1.9vw;
+}

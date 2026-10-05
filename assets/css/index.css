@@ -411,3 +411,9 @@ body:has(#gu:checked) .enter-btn {
 .types-of-text .is-fallback {
     font-family: "Baloo", sans-serif;
 }
+
+.types-of-text .english,
+.types-of-text .is-fallback {
+    top: 0.46vw;
+    font-size: 2.6vw;
+}

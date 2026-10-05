@@ -247,3 +247,8 @@
 .page-back-btn:hover .page-back-btn-image-hover {
     opacity: 1;
 }
+
+.page-title-text .english,
+.page-title-text .is-fallback {
+    font-family: "Baloo", sans-serif;
+}

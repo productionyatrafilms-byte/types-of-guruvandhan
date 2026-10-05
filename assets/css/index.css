@@ -406,3 +406,8 @@ body:has(#gu:checked) .enter-btn {
 .stage.is-open .center-flower {
     cursor: pointer;
 }
+
+.types-of-text .english,
+.types-of-text .is-fallback {
+    font-family: "Baloo", sans-serif;
+}

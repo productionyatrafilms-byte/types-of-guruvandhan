@@ -2,7 +2,7 @@
 
 .page-title {
     position: absolute;
-    top: calc(5.5% - 0.1937vw);
+    top: calc(5.5% - 3.2937vw);
     height: auto;
     margin: 0;
     border-style: solid;
@@ -33,12 +33,33 @@
     white-space: nowrap;
 }
 
+.page-title-text .english,
+.page-title-text .hindi,
+.page-title-text .gujrati {
+    display: block;
+    line-height: 8.3333vw;
+}
+
+.page-title-text .hindi {
+    position: relative;
+    top: 0.7vw;
+}
+
+.page-title-text .gujrati {
+    position: relative;
+    top: 0.7vw;
+}
+
+.page-title-text .is-fallback {
+    top: 0;
+}
+
 /* ---------- Home button ---------- */
 
 .home-btn {
     position: absolute;
-    top: calc(5.5% + 0.8vw);
-    left: 6.5104%;
+    top: calc(1.5% + 1.224vw);
+    left: 1.3vw;
     width: 3.5417%;
     height: auto;
     line-height: 0;
@@ -70,7 +91,7 @@
 
 .shortcut-key {
     position: absolute;
-    left: 4.4792%;
+    left: 0.7vw;
     width: 4.2708%;
     height: auto;
     padding-top: 4.6875%;
@@ -196,8 +217,8 @@
 
 .page-back-btn {
     position: absolute;
-    top: calc(5.5% + 0.9284vw);
-    left: 6.4214%;
+    top: calc(1.5% + 1.224vw);
+    left: 1.5vw;
     width: 2.5559vw;
     height: auto;
     line-height: 0;

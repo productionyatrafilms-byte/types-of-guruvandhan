@@ -103,6 +103,25 @@ body {
     border-radius: 3.3854vw;
 }
 
+/* Full-page panel: no inset, no rounded corners, no outline */
+
+.inner-bg-full {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+}
+
+.inner-bg-full::after {
+    display: none;
+}
+
+/* the ripple video has a few edge specks in its corners: enlarge it a little so they fall outside the page */
+.inner-bg-full .inner-bg-video {
+    scale: 1.08;
+}
+
 .inner-bg-image {
     width: 100%;
     height: 100%;
@@ -124,8 +143,8 @@ body {
 /* ---------- Language toggle (Figma LAG, 153 x 54) ---------- */
 
 #langSelect {
-    top: calc(5.5% + 0.8vw);
-    right: 6.4583vw;
+    top: calc(1.8% + 1.224vw);
+    right: 3vw;
     filter: drop-shadow(0 0.2083vw 0.1042vw rgba(0, 0, 0, 0.25));
 }
 

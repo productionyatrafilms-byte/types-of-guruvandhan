@@ -5,9 +5,9 @@
     display: block;
     text-decoration: none;
     pointer-events: none;
-    top: 31.2739%;
-    left: 40.9788%;
-    width: 18.1136%;
+    top: 29.5664%;
+    left: 40.1356%;
+    width: 19.8%;
     height: auto;
     line-height: 0;
     cursor: pointer;
@@ -28,7 +28,7 @@
     width: 55.01%;
     translate: 0 -50%;
     font-size: 1.9vw;
-    line-height: 1.26vw;
+    line-height: 1.38vw;
     text-align: center;
     white-space: normal;
     text-wrap: balance;
@@ -39,11 +39,11 @@
 
 .topic-bubble-text .hindi,
 .topic-bubble-text .gujrati {
-    line-height: 2.2vw;
+    line-height: 2.4vw;
 }
 
 .topic-bubble-text .is-fallback {
-    line-height: 1.26vw;
+    line-height: 1.38vw;
 }
 
 .stage.is-open .topic-bubble {
@@ -61,8 +61,8 @@
 /* Exit: the bubbles go back behind the main flower, then the page changes */
 
 .stage.is-open.is-leaving .topic-bubble {
-    top: 31.2739%;
-    left: 40.9788%;
+    top: 29.5664%;
+    left: 40.1356%;
     transition-duration: var(--leave-time);
 }
 
@@ -70,28 +70,28 @@
 .stage.is-open.is-leaving .topic-bubble-when,
 .stage.is-open.is-leaving .topic-bubble-whom,
 .stage.is-open.is-leaving .topic-bubble-not {
-    top: 31.2739%;
-    left: 40.9788%;
+    top: 29.5664%;
+    left: 40.1356%;
 }
 
 .stage.is-open .topic-bubble-intro {
-    top: 9.7775%;
-    left: 8.9475%;
+    top: 8.07%;
+    left: 8.1043%;
 }
 
 .stage.is-open .topic-bubble-when {
-    top: 52.7702%;
-    left: 8.9475%;
+    top: 51.0627%;
+    left: 8.1043%;
 }
 
 .stage.is-open .topic-bubble-whom {
-    top: 52.7702%;
-    left: 72.9058%;
+    top: 51.0627%;
+    left: 72.0626%;
 }
 
 .stage.is-open .topic-bubble-not {
-    top: 9.7775%;
-    left: 72.9058%;
+    top: 8.07%;
+    left: 72.0626%;
 }
 
 /* ---------- Centre flower ---------- */
@@ -175,9 +175,9 @@
 
 .types-of {
     position: absolute;
-    top: calc(5.5% + 0.4615vw);
-    left: 40.1563%;
-    width: 19.6354%;
+    top: calc(5.5% - 1.5385vw);
+    left: 36.5%;
+    width: 27%;
     height: auto;
     background-color: var(--badge-fill);
     border: 0.3125vw solid var(--frame-red);
@@ -187,7 +187,7 @@
 .types-of-text {
     position: relative;
     top: -0.5vw;
-    font-size: 3.5vw;
+    font-size: 3.1vw;
     line-height: 2.8646vw;
     text-align: center;
     white-space: nowrap;
@@ -195,17 +195,24 @@
 }
 
 /* Hindi / Gujarati: smaller text in a block that is exactly as tall as the English pill, centred by position */
+.types-of-text .english,
 .types-of-text .hindi,
 .types-of-text .gujrati {
     display: block;
     position: relative;
     top: 0.5vw;
-    font-size: 3vw;
+    padding: 0.6vw 0;
+    font-size: 2.7vw;
     line-height: 3.0729vw;
 }
 
+.types-of-text .english {
+    top: 0;
+    font-size: 3.1vw;
+}
+
 .types-of-text .gujrati {
-    top: 0.6563vw;
+    top: 0.65vw;
 }
 
 /* ---------- Characters ---------- */
@@ -226,6 +233,49 @@
     width: 8.5599%;
     height: auto;
     display: block;
+}
+
+/* Bowing poses shown while "Guru Vandan" is hovered: the two poses cross-fade at the same moment and speed */
+
+/* The two poses differ (head and hands), so a fade would show a doubled figure.
+   They swap in a single frame instead, with no overlap. */
+
+.figure-boy,
+.figure-girl,
+.figure-boy-hover,
+.figure-girl-hover {
+    transition: none;
+}
+
+.figure-boy-hover,
+.figure-girl-hover {
+    position: absolute;
+    height: auto;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.figure-boy-hover {
+    top: 34.9750%;
+    left: 27.1210%;
+    width: 7.3712%;
+}
+
+.figure-girl-hover {
+    top: 40.6164%;
+    left: 63.7664%;
+    width: 9.1334%;
+}
+
+.stage.is-open.is-flower-hover .figure-boy-hover,
+.stage.is-open.is-flower-hover .figure-girl-hover {
+    opacity: 1;
+}
+
+.stage.is-open.is-flower-hover .figure-boy,
+.stage.is-open.is-flower-hover .figure-girl {
+    opacity: 0;
 }
 
 /* ---------- Buttons ---------- */
@@ -311,8 +361,8 @@ body:has(#gu:checked) .enter-btn {
 
 .back-btn {
     position: absolute;
-    top: calc(5.5% + 1.224vw);
-    left: 6.4214%;
+    top: calc(1.5% + 1.224vw);
+    left: 1.5vw;
     width: 2.5559vw;
     height: auto;
     padding: 0;

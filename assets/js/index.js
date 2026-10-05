@@ -10,6 +10,12 @@ $(function () {
 
     var transitionSound = new Audio("./assets/audio/transistion-click.mp3");
 
+    $(".figure-boy-hover, .figure-girl-hover").each(function () {
+        if (this.decode) {
+            this.decode().catch(function () {});
+        }
+    });
+
     $(".enter-btn").on("click", function () {
         playSound(transitionSound);
         $stage.addClass("is-open");
